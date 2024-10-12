@@ -20,6 +20,10 @@ public class Product {
         this.qBar = qBar;
     }
 
+    public Product(){
+
+    }
+
     // Getters and setters
     public int getIdProduct() {
         return idProduct;

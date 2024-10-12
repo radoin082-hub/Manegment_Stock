@@ -1,0 +1,81 @@
+.products-list-view{
+-fx-background-color: rgba(0, 0, 0, 0.27);
+}
+
+products-list-view{
+    -fx-background-color: rgba(3, 98, 208, 0.24);
+
+}
+.products-list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(204, 11, 87, 0);
+}
+
+
+.products-list-view .list-cell:filled {
+    -fx-background-color: rgba(245, 244, 244, 0);
+    -fx-fill: #000000;
+    -fx-padding: 25px;
+    -fx-background-radius: 150px;
+    -fx-cell-spacing: 10px;
+}
+
+.products-list-view .list-cell {
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-cell-spacing: 10px;
+    -fx-alignment: center;
+
+}
+
+.add-products-container{
+    -fx-padding: 10;
+    -fx-background-radius: 10px;
+    -fx-background-color: rgba(255, 255, 255, 0.79);
+}
+
+.add-products-container .text-field{
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+}
+.add-products-container .add-button{
+    -fx-background-color: #13ba6e;
+    -fx-text-fill: white;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.add-products-container .add-button:hover{
+    -fx-background-color: #10d378;
+}
+
+
+.add-products-container .clearButton{
+    -fx-background-color: #ba1326;
+    -fx-text-fill: white;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.add-products-container .clearButton:hover{
+    -fx-background-color: #de172d;
+}
+
+
+.overlay{
+    -fx-background-color: rgba(0, 0, 0, 0.78);
+}
+
+.product-color{
+    -fx-background-radius: 10px;
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+
+.product-color .color-picker-box{
+    -fx-padding: 20;
+}
+.product-color .label{
+    -fx-font-size: 10px;
+    -fx-text-alignment: right;
+}

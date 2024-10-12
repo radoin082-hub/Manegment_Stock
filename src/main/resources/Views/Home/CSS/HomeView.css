@@ -1,0 +1,68 @@
+
+
+@font-face {
+    font-family: 'Tajawal';
+    src: url('Fonts/Tajawal-Black.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+
+.navBar *{
+    -fx-font-family: 'Tajawal';
+    -fx-font-weight: bold;
+    font-style: normal;
+}
+.navBar{
+    -fx-background-color: #3470a0;
+}
+
+.mainBackground{
+    -fx-background-color: #021125;
+}
+
+.navBar .navButton{
+    -fx-padding: 7;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+
+.navBar .navButtonNormal{
+    -fx-background-color: white;
+    -fx-border-width: 1px;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+
+.navButton .label{
+    -fx-font-size: 17;
+    -fx-font-weight: bold;
+}
+
+
+
+.navBar .navButton:hover{
+    -fx-background-color: #16c08d;
+    -fx-border-color: white;
+    -fx-border-radius: 10px;
+}
+
+.selected{
+    -fx-background-color: #16c08d;
+    -fx-border-color: white;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+}
+
+
+.selected .label{
+    -fx-text-fill: white;
+}
+
+.navBar .navButton:hover .label{
+    -fx-text-fill: white;
+}

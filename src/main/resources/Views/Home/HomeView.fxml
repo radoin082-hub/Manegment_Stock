@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="945.0" stylesheets="@CSS/HomeView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Home.HomeViewController">
+   <children>
+      <VBox layoutX="135.0" layoutY="37.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="90.0" spacing="10.0" styleClass="navBar" VBox.vgrow="NEVER">
+               <children>
+                  <StackPane fx:id="sellButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClicks" onMouseEntered="#handleMouseOvers" onMouseExited="#handleMouseExits" prefHeight="64.0" prefWidth="159.0">
+                     <children>
+                        <ImageView fitHeight="49.0" fitWidth="71.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                           <image>
+                              <Image url="@../../Images/Home/payment-method.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER_RIGHT" mouseTransparent="true" prefHeight="92.0" prefWidth="145.0" text="البيع" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="navButtonNormal" />
+                        <String fx:value="navButton" />
+                     </styleClass>
+                  </StackPane>
+                  <StackPane fx:id="suppliersButton" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#handleClicks" onMouseEntered="#handleMouseOvers" onMouseExited="#handleMouseExits" prefHeight="64.0" prefWidth="159.0">
+                     <children>
+                        <ImageView fitHeight="49.0" fitWidth="71.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                           <image>
+                              <Image url="@../../Images/Home/supplier.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER_RIGHT" mouseTransparent="true" prefHeight="92.0" prefWidth="145.0" text="الموردين" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="navButtonNormal" />
+                        <String fx:value="navButton" />
+                     </styleClass>
+                  </StackPane>
+                  <StackPane fx:id="clientsButton" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#handleClicks" onMouseEntered="#handleMouseOvers" onMouseExited="#handleMouseExits" prefHeight="64.0" prefWidth="159.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" mouseTransparent="true" prefHeight="92.0" prefWidth="145.0" text="الزبائن" />
+                        <ImageView fitHeight="49.0" fitWidth="71.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                           <image>
+                              <Image url="@../../Images/Home/customer%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="navButtonNormal" />
+                        <String fx:value="navButton" />
+                     </styleClass>
+                  </StackPane>
+                  <StackPane fx:id="productsButton" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#handleClicks" onMouseEntered="#handleMouseOvers" onMouseExited="#handleMouseExits" prefHeight="64.0" prefWidth="159.0">
+                     <children>
+                        <ImageView fitHeight="49.0" fitWidth="71.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                           <image>
+                              <Image url="@../../Images/Home/products.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER_RIGHT" mouseTransparent="true" prefHeight="92.0" prefWidth="145.0" text="السلع" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="navButtonNormal" />
+                        <String fx:value="navButton" />
+                     </styleClass>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <StackPane fx:id="mainScreen" prefHeight="559.0" prefWidth="860.0" styleClass="mainBackground" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

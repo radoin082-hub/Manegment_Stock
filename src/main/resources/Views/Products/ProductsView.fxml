@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<StackPane prefHeight="457.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Products.ProductsViewController">
+   <children>
+      <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
+         <children>
+            <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="332.0" styleClass="menu-panels" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="44.0" fitWidth="40.0" onMouseClicked="#openAddProducts" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/Shared/addButton.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <ListView fx:id="productListView" prefHeight="404.0" prefWidth="724.0" styleClass="products-list-view" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <StackPane fx:id="overlay" prefHeight="150.0" prefWidth="200.0" styleClass="overlay" visible="false">
+         <children>
+            <AnchorPane fx:id="addProductsOverlay" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="339.0" prefWidth="706.0" styleClass="add-products-container" StackPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="8.0" layoutY="13.0" prefHeight="237.0" prefWidth="373.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="productNameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="335.0" promptText="اسم المنتج" VBox.vgrow="NEVER" />
+                        <TextField fx:id="productBuyPriceField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="335.0" promptText="سعر الشراء" />
+                        <TextField fx:id="productSellPriceField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="335.0" promptText="سعر البيع" />
+                        <TextField fx:id="productQuantityField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="335.0" promptText="الكمية" />
+                        <ColorPicker fx:id="productColor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="اللون" styleClass="product-color" VBox.vgrow="ALWAYS">
+                           <value>
+                              <Color red="0.01315789483487606" green="0.0017056530341506004" blue="0.0017056530341506004" />
+                           </value>
+                        </ColorPicker>
+                        <TextField fx:id="productBarCodeField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="335.0" promptText="رمز QR" />
+                        <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="686.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="105.0" styleClass="clearButton" text="الغاء" />
+                              <Button mnemonicParsing="false" onAction="#addNewProduct" prefHeight="47.0" prefWidth="105.0" styleClass="add-button" text="اضافة" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="31.0" fitWidth="27.0" layoutY="25.0" onMouseClicked="#closeAddProducts" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../../Images/Shared/exitButton.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+   <stylesheets>
+      <URL value="@CSS/ProductsView.css" />
+      <URL value="@../SharedCSS/Shared.css" />
+   </stylesheets>
+</StackPane>

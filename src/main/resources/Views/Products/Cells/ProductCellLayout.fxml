@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<HBox fx:id="productContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="106.0" prefWidth="812.0" spacing="5.0" styleClass="product-cell-container" stylesheets="@CSS/ProductCellLayout.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Products.Cells.ProductCellController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="productName" alignment="CENTER" prefHeight="83.0" prefWidth="147.0" styleClass="valueLabel" text="dadfzadazdza" StackPane.alignment="BOTTOM_CENTER" />
+            <Label styleClass="hint-label" text="اسم المنتج" StackPane.alignment="TOP_CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="hint-label" text="سعر الشراء" StackPane.alignment="TOP_CENTER" />
+            <Label fx:id="productBuyPrice" alignment="CENTER" prefHeight="83.0" prefWidth="117.0" styleClass="valueLabel" text="20000 DA" StackPane.alignment="BOTTOM_CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="productSellPrice" alignment="CENTER" prefHeight="83.0" prefWidth="117.0" styleClass="valueLabel" text="20000 DA" StackPane.alignment="BOTTOM_CENTER" />
+            <Label styleClass="hint-label" text="سعر البيع" StackPane.alignment="TOP_CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="productBarCode" fitHeight="99.0" fitWidth="144.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../Images/Products/barcode-product.png" />
+               </image>
+            </ImageView>
+         </children>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </StackPane>
+      <Separator orientation="VERTICAL" prefHeight="9.0" prefWidth="0.0" valignment="BOTTOM" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="89.0" prefWidth="210.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Shared/pen.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="removeProduct" fitHeight="48.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Shared/delete.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </HBox.margin>
+      </HBox>
+   </children>
+</HBox>
