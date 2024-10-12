@@ -8,7 +8,7 @@ public class Sales {
     private String qBar;
     private double price;
 
-    // Constructor
+
     public Sales(int idSales, int idProduct, String nameProduct, int quantity, String qBar, double price) {
         this.idSales = idSales;
         this.idProduct = idProduct;
@@ -18,7 +18,7 @@ public class Sales {
         this.price = price;
     }
 
-    // Getters and setters
+
     public int getIdSales() {
         return idSales;
     }

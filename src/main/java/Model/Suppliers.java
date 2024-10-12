@@ -8,7 +8,7 @@ public class Suppliers {
     private double price;
     private String description;
 
-    // Constructor
+
     public Suppliers(int idSuppliers, String nameSuppliers, String nameProduct, int quantitySuppliers, double price, String description) {
         this.idSuppliers = idSuppliers;
         this.nameSuppliers = nameSuppliers;
@@ -18,7 +18,7 @@ public class Suppliers {
         this.description = description;
     }
 
-    // Getters and setters
+
     public int getIdSuppliers() {
         return idSuppliers;
     }
