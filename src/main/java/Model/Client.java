@@ -7,7 +7,7 @@ public class Client {
     private double priceClient;
     private String description;
 
-    // Constructor
+
     public Client(int idClient, String nameClient, String nameProduct, double priceClient, String description) {
         this.idClient = idClient;
         this.nameClient = nameClient;
@@ -16,7 +16,7 @@ public class Client {
         this.description = description;
     }
 
-    // Getters and setters
+
     public int getIdClient() {
         return idClient;
     }

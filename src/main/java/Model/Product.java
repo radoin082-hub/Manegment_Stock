@@ -9,7 +9,7 @@ public class Product {
     private int quantity;
     private String qBar;
 
-    // Constructor
+
     public Product(int idProduct, String nameProduct, double oldPrice, double newPrice, String color, int quantity, String qBar) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
@@ -20,11 +20,7 @@ public class Product {
         this.qBar = qBar;
     }
 
-    public Product(){
 
-    }
-
-    // Getters and setters
     public int getIdProduct() {
         return idProduct;
     }
