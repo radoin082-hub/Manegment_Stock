@@ -3,40 +3,43 @@ package Controllers.Products.Cells;
 import Model.Product;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 
-public class ProductCell extends ListCell<Product> {
-    private HBox layout;
-    private ProductCellController productCellController;
-    public ProductCell(){
-        try{
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/Views/Products/Cells/ProductCellLayout.fxml"));
-            layout=loader.load();
-            productCellController=loader.getController();
-            ImageView removeProduct= (ImageView) loader.getNamespace().get("removeProduct");
-            removeProduct.setOnMouseClicked(event -> {
-                getListView().getItems().remove(getItem());
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
+import java.io.IOException;
 
+public class ProductCell extends ListCell<Product> {
+    private FXMLLoader mLLoader;
+    private HBox hBox;
+    private ProductCellController productCellController;
+    private ListView<Product> productListView;
+
+    public ProductCell(ListView<Product> productListView) {
+        this.productListView = productListView;
+    }
 
     @Override
-    protected void updateItem(Product product, boolean b) {
-        super.updateItem(product, b);
-        if(product==null || b){
+    protected void updateItem(Product product, boolean empty) {
+        super.updateItem(product, empty);
+
+        if (empty || product == null) {
             setGraphic(null);
             setText(null);
-        }
-        else{
+        } else {
+            if (mLLoader == null) {
+                mLLoader = new FXMLLoader(getClass().getResource("/Views/Products/Cells/ProductCellLayout.fxml"));
+                try {
+                    hBox = mLLoader.load();
+                    productCellController = mLLoader.getController();
+                    productCellController.setProductListView(productListView);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
             productCellController.setProduct(product);
-            setGraphic(layout);
             setText(null);
+            setGraphic(hBox);
         }
     }
-
-
 }

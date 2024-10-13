@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
+
 <HBox fx:id="productContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="106.0" prefWidth="812.0" spacing="5.0" styleClass="product-cell-container" stylesheets="@CSS/ProductCellLayout.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Products.Cells.ProductCellController">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0">
@@ -64,7 +65,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="removeProduct" fitHeight="48.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="removeProduct" fitHeight="48.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleRemoveProduct">
                <image>
                   <Image url="@../../../Images/Shared/delete.png" />
                </image>
