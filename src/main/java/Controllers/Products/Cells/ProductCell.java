@@ -12,10 +12,19 @@ public class ProductCell extends ListCell<Product> {
     private FXMLLoader mLLoader;
     private HBox hBox;
     private ProductCellController productCellController;
-    private ListView<Product> productListView;
+
 
     public ProductCell(ListView<Product> productListView) {
-        this.productListView = productListView;
+
+            mLLoader = new FXMLLoader(getClass().getResource("/Views/Products/Cells/ProductCellLayout.fxml"));
+            try {
+                hBox = mLLoader.load();
+                productCellController = mLLoader.getController();
+                productCellController.setProductListView(productListView);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
     }
 
     @Override
@@ -26,17 +35,6 @@ public class ProductCell extends ListCell<Product> {
             setGraphic(null);
             setText(null);
         } else {
-            if (mLLoader == null) {
-                mLLoader = new FXMLLoader(getClass().getResource("/Views/Products/Cells/ProductCellLayout.fxml"));
-                try {
-                    hBox = mLLoader.load();
-                    productCellController = mLLoader.getController();
-                    productCellController.setProductListView(productListView);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
             productCellController.setProduct(product);
             setText(null);
             setGraphic(hBox);

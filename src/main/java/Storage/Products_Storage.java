@@ -41,7 +41,7 @@ public class Products_Storage {
         String sql = "INSERT INTO dbo.Products (Name_product, Old_price, New_price, Color, Quantity, Q_bar) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(CONNECTION_URL);
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+             PreparedStatement statement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, product.getNameProduct());
             statement.setDouble(2, product.getOldPrice());
@@ -51,6 +51,12 @@ public class Products_Storage {
             statement.setString(6, product.getqBar());
 
             statement.executeUpdate();
+
+            ResultSet resultId=statement.getGeneratedKeys();
+            if(resultId.next()){
+                int productId=resultId.getInt(1);
+                product.setIdProduct(productId);
+            }
         }
     }
 
