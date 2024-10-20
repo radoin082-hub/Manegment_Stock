@@ -2,6 +2,7 @@ package Model;
 
 public class Product {
     private int idProduct;
+    private byte[] productImage;
     private String nameProduct;
     private double oldPrice;
     private double newPrice;
@@ -10,7 +11,7 @@ public class Product {
     private String qBar;
 
 
-    public Product(int idProduct, String nameProduct, double oldPrice, double newPrice, String color, int quantity, String qBar) {
+    public Product(int idProduct,byte[] productImage, String nameProduct, double oldPrice, double newPrice, String color, int quantity, String qBar) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
         this.oldPrice = oldPrice;
@@ -18,6 +19,7 @@ public class Product {
         this.color = color;
         this.quantity = quantity;
         this.qBar = qBar;
+        this.productImage=productImage;
     }
 
 
@@ -77,4 +79,11 @@ public class Product {
         this.qBar = qBar;
     }
 
+    public byte[] getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(byte[] productImage) {
+        this.productImage = productImage;
+    }
 }

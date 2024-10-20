@@ -1,12 +1,17 @@
 package Controllers.Products.Cells;
 
+import Controllers.Products.ProductsViewController;
 import Model.Product;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 
+import java.io.Console;
 import java.io.IOException;
+import java.util.function.Consumer;
 
 public class ProductCell extends ListCell<Product> {
     private FXMLLoader mLLoader;
@@ -14,17 +19,17 @@ public class ProductCell extends ListCell<Product> {
     private ProductCellController productCellController;
 
 
-    public ProductCell(ListView<Product> productListView) {
+    public ProductCell(ListView<Product> productListView, ProductsViewController productsViewController) {
 
-            mLLoader = new FXMLLoader(getClass().getResource("/Views/Products/Cells/ProductCellLayout.fxml"));
-            try {
-                hBox = mLLoader.load();
-                productCellController = mLLoader.getController();
-                productCellController.setProductListView(productListView);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+        mLLoader = new FXMLLoader(getClass().getResource("/Views/Products/Cells/ProductCellLayout.fxml"));
+        try {
+            hBox = mLLoader.load();
+            productCellController = mLLoader.getController();
+            productCellController.setProductListView(productListView);
+            productCellController.setController(productsViewController);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -35,6 +40,8 @@ public class ProductCell extends ListCell<Product> {
             setGraphic(null);
             setText(null);
         } else {
+
+
             productCellController.setProduct(product);
             setText(null);
             setGraphic(hBox);

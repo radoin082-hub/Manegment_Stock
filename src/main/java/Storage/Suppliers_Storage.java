@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class Suppliers_Storage {
-    private static final String CONNECTION_URL = "jdbc:sqlserver://localhost:8080;databaseName=GestionStock;user=sa;password=123456;encrypt=false;trustServerCertificate=false;";
+    private static final String CONNECTION_URL = "jdbc:sqlserver://localhost:1433;databaseName=GestionStock;user=sa;password=sa;encrypt=false;trustServerCertificate=false;";
 
 
     public List<Suppliers> getAllSuppliers() throws SQLException {

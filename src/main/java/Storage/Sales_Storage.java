@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sales_Storage {
-    private static final String CONNECTION_URL = "jdbc:sqlserver://localhost:8080;databaseName=GestionStock;user=sa;password=123456;encrypt=false;trustServerCertificate=false;";
-
+    private static final String CONNECTION_URL = "jdbc:sqlserver://localhost:1433;databaseName=GestionStock;user=do;password=123456;encrypt=false;trustServerCertificate=true;";
     public List<Sales> getAllSales() throws SQLException {
         List<Sales> salesList = new ArrayList<>();
 

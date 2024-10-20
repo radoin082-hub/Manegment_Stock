@@ -1,9 +1,12 @@
 package Controllers.Products.Cells;
 
+import Controllers.Products.ProductsViewController;
 import Model.Product;
 import Service.ProductService;
 import Storage.Products_Storage;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -16,6 +19,7 @@ import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.function.Consumer;
 
 public class ProductCellController {
 
@@ -24,7 +28,7 @@ public class ProductCellController {
     @FXML private Label productSellPrice;
     @FXML private ImageView productBarCode;
     @FXML private HBox productContainer;
-    @FXML private ImageView removeProduct;
+    @FXML private ImageView productImage;
 
     private Product product;
     private ProductService productService;
@@ -39,6 +43,9 @@ public class ProductCellController {
         this.productName.setText(product.getNameProduct());
         this.productBuyPrice.setText(String.valueOf(product.getOldPrice() + " DA"));
         this.productSellPrice.setText(String.valueOf(product.getNewPrice() + " DA"));
+        if(product.getProductImage()!=null){
+            productImage.setImage(new Image(new ByteArrayInputStream(product.getProductImage())));
+        }
         productContainer.setStyle("-fx-background-color: " + "#" + product.getColor().replace("0x", ""));
 
         try {
@@ -70,5 +77,16 @@ public class ProductCellController {
                 System.err.println("Error deleting product with ID: " + productId);
             }
         }
+    }
+
+    @FXML void handleEditProduct(){
+        productsViewController.openEditProduct(product);
+    }
+    private ProductsViewController  productsViewController;
+
+
+
+    public void setController(ProductsViewController productsViewController) {
+        this.productsViewController=productsViewController;
     }
 }

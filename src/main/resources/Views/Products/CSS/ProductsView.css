@@ -79,3 +79,23 @@ products-list-view{
     -fx-font-size: 10px;
     -fx-text-alignment: right;
 }
+
+.product-image-frame{
+    -fx-border-radius: 10px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+}
+
+.product-image-button{
+    -fx-background-color: #2476b2;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+}
+
+.product-image-button:hover{
+    -fx-background-color: #2e92df;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+}
